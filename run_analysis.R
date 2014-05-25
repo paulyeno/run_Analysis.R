@@ -32,7 +32,7 @@ for(i in 1:86){
 }
 actmeanstd<-cbind(actfin,meanstd)
 colnames(actmeanstd)<-c("Activity",colkey)
-write.csv(actmeanstd, file = "tidy.csv", row.names = FALSE)
+write.table(actmeanstd, file = "tidy.txt", col.names = T)
 subactmeanstd<-cbind(subj,actmeanstd)
 colnames(subactmeanstd)<-c("Subject","Activity",colkey)
 subactavg<-matrix(rep(0,15840),nrow=180,ncol=88)
@@ -53,4 +53,4 @@ for(i in 1:30){
   }
   next
 }  
-write.csv(subactavg, file = "tidy2.csv", row.names = FALSE)
+write.table(subactavg, file = "tidy2.txt", col.names = T)
